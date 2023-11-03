@@ -23,15 +23,16 @@ section#login{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    
     overflow:hidden; /*TUDO QUE ESTIVER FORA DA BORDA FICA ESCONDIDO, SEM ISSO A IMAGEM NÃO VAI FICAR COM AS BORDAS ARREDONDADAS*/
 
     background-color: white;
     width: 275px;
-    height: 510px;
+    height: 515px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.450);
 
+    transform: translate(-50%, -50%);
     transition: width 0.3s, height 0.3s; /*CRIA UMA ANIMAÇÃO QUANDO MUDA O TAMANHO DA TELA*/
     transition-timing-function: ease; /*SUAVIZA A ANIMAÇÃO CRIADA ACIMA */
 }
@@ -59,15 +60,38 @@ div#formulario > p{
 
 form > div.campo{
     background-color: #4D40E1;
+    border: 2px solid #4D40E1;
     display: block;
     width: 100%;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 8px;
     margin: 5px 0px; /*MARGEM DE CIMA E DE BAIXO COM 5px E MARGEM DA ESQUERDA E DIREITA COM 0px*/
 }
 
 div.campo > label{ /*SOMENTE OS label QUES ESTIVEM DENTRO DO div COM A CLASSE campo, SE TIVER OUTRO label COM OUTRA CLASSE NÃO SERÁ APLICADO*/
     display: none;
+}
+
+div.campo > span{
+    color: white;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input{
+    background-color: #d1f5c6;
+    font-size: 1em;
+    width: calc(100% - 45px); /* PODEMOS FAZER CALCULOS ATRAVÉS DESSA FUNÇÃO*/ 
+    height: 100%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-12px); /*MOVIMENTA APENAS NO EIXO Y (PRA CIMA E PARA BAIXO) FAZER SEMPRE COMO ULTIMA LINHA*/
+}
+
+div.campo > input:focus-within{ /*QUANDO EU ESTIVER DIGITANDO*/
+    background-color: white;    
 }
 
 form > input[type=submit]{
@@ -109,3 +133,4 @@ form > a.botao:hover{
 form > a.botao > span{
     font-size: 0.8em;
 }
+
